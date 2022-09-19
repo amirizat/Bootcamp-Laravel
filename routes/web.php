@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
+
+Route::get('/member/login', [ MemberController::class, 'login' ] );
+
+Route::get('/member/register',  [ MemberController::class, 'register' ] );
+
+Route::get('/member', [ MemberController::class, 'index' ] );
+
+
+Route::get('/member/profile',  [ MemberController::class, 'profile' ] );
+
