@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,7 @@ Route::get('/member', [ MemberController::class, 'index' ] );
 
 Route::get('/member/profile',  [ MemberController::class, 'profile' ] );
 
+
+Route::view('dashboard', 'dashboard')
+	->name('dashboard')
+	->middleware(['auth', 'verified']);
